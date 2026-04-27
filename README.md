@@ -192,10 +192,12 @@ The notebook will guide you through exporting to:
 │   └── skills/
 │       └── notebook-from-canvas.skill.md
 ├── config/                     # YAML configuration files
-├── notebooks/
-│   ├── higher-education/       # Higher Ed templates
+├── templates/                  # Canvas templates for notebook generation
+│   ├── higher-education/
 │   │   └── canvas_content.md
-│   ├── fraud-operations/       # Financial Services templates
+│   └── financial-services/
+│       └── canvas_content.md
+├── notebooks/
 │   └── customers/              # Customer-specific notebooks
 │       └── {customer-name}/
 │           ├── {customer-name}.ipynb
@@ -229,8 +231,8 @@ The notebook will guide you through exporting to:
 
 ### Add a New Template
 
-1. Create directory: `notebooks/your-template/`
-2. Export Slack Canvas to `notebooks/your-template/canvas_content.md`
+1. Create directory: `templates/your-template/`
+2. Export Slack Canvas to `templates/your-template/canvas_content.md`
 3. Generate notebook: `python3 scripts/generate_notebook.py --template your-template`
 
 ### Update Customer Context

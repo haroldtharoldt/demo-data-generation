@@ -30,14 +30,16 @@
       "Bash(code --version)",
       "Bash(brew install *)",
       "Bash(gh repo *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ],
     "additionalDirectories": [
       "/Users/harold.thomas/Library/CloudStorage/GoogleDrive-harold.thomas@salesforce.com/My Drive/SE Resources/Demo Data/Python Data Generation Scripts/.claude",
       "/tmp",
       "/private/tmp",
       "/Users/harold.thomas/Library/CloudStorage/GoogleDrive-harold.thomas@salesforce.com/My Drive/SE Resources/Demo Data/Python Data Generation Scripts/notebooks",
-      "/Users/harold.thomas/Library/CloudStorage/GoogleDrive-harold.thomas@salesforce.com/My Drive/SE Resources/Demo Data/Python Data Generation Scripts/.git"
+      "/Users/harold.thomas/Library/CloudStorage/GoogleDrive-harold.thomas@salesforce.com/My Drive/SE Resources/Demo Data/Python Data Generation Scripts/.git",
+      "/Users/harold.thomas/Library/CloudStorage/GoogleDrive-harold.thomas@salesforce.com/My Drive/SE Resources/Demo Data/Python Data Generation Scripts/templates"
     ]
   }
 }

@@ -248,17 +248,19 @@ def main():
     # Determine output directory and paths
     if args.output:
         output_path = Path(args.output)
-        # If custom output, use same directory for canvas content
-        canvas_file_path = output_path.parent / "canvas_content.md"
+        # If custom output, look for canvas content in templates directory
+        canvas_file_path = Path("templates") / (template_name or "template") / "canvas_content.md"
     else:
-        # Create template-specific subdirectory
+        # Canvas templates are stored in templates/ directory
+        canvas_file_path = Path("templates") / (template_name or "template") / "canvas_content.md"
+
+        # Generated notebooks go to notebooks/customers/ directory (will be moved/renamed by skill)
         template_dir = Path("notebooks") / (template_name or "notebook")
         template_dir.mkdir(parents=True, exist_ok=True)
 
         timestamp = datetime.now().strftime('%Y%m%d')
         filename = f"{template_name or 'notebook'}_{timestamp}.ipynb"
         output_path = template_dir / filename
-        canvas_file_path = template_dir / "canvas_content.md"
 
     print(f"\n:art: Generating notebook from canvas: {canvas_id}")
 

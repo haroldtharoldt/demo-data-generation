@@ -24,9 +24,9 @@ You are helping the user generate a Jupyter notebook from a Slack Canvas templat
 
 **For "Education" or "Financial Services" industries:**
 
-1. Check for existing canvas_content.md files in the notebooks/ directory:
-   - For Education: Look in `notebooks/higher-education/`, `notebooks/student-success/`, `notebooks/advancement/`, etc.
-   - For Financial Services: Look in `notebooks/fraud-operations/`, `notebooks/financial-services/`, etc.
+1. Check for existing canvas_content.md files in the templates/ directory:
+   - For Education: Look in `templates/higher-education/`, `templates/student-success/`, `templates/advancement/`, etc.
+   - For Financial Services: Look in `templates/financial-services/`, `templates/fraud-operations/`, etc.
    
 2. Build a list of available templates by checking which directories contain `canvas_content.md` files
 
@@ -34,8 +34,8 @@ You are helping the user generate a Jupyter notebook from a Slack Canvas templat
    - question: "Which template would you like to use?"
    - header: "Template"
    - For each found canvas_content.md file, create an option with:
-     - label: The directory name (formatted nicely, e.g., "Higher Education", "Fraud Operations")
-     - description: "Use existing canvas_content.md from notebooks/{directory-name}/"
+     - label: The directory name (formatted nicely, e.g., "Higher Education", "Financial Services")
+     - description: "Use existing canvas_content.md from templates/{directory-name}/"
    - Add a final option:
      - label: "Create New from Slack Canvas"
      - description: "Import new canvas content from Slack (requires canvas URL)"
@@ -62,19 +62,19 @@ You are helping the user generate a Jupyter notebook from a Slack Canvas templat
 2. Parse the canvas ID from the input (handle both full URLs and direct IDs)
 
 3. Prompt for a template name:
-   - question: "What should we name this template? (will create notebooks/{name}/ directory)"
+   - question: "What should we name this template? (will create templates/{name}/ directory)"
    - header: "Template Name"
    - (Suggest lowercase-with-hyphens format like "wealth-management" or "healthcare")
 
-4. Create the template directory: `notebooks/{template-name}/`
+4. Create the template directory: `templates/{template-name}/`
 
 5. Inform the user they need to manually export the canvas content:
    - Tell them to open the canvas URL: `https://salesforce.enterprise.slack.com/docs/T026QPGMQ/{canvas_id}`
    - Tell them to copy ALL content (⌘+A, ⌘+C)
-   - Tell them to save it to: `notebooks/{template-name}/canvas_content.md`
+   - Tell them to save it to: `templates/{template-name}/canvas_content.md`
    - Tell them to confirm when ready
 
-6. Once confirmed, verify the file exists at `notebooks/{template-name}/canvas_content.md`
+6. Once confirmed, verify the file exists at `templates/{template-name}/canvas_content.md`
 
 7. Execute the notebook generation script:
    - Determine which script to use based on Step 1 industry selection:
@@ -352,7 +352,7 @@ For CSV output (always offer as backup):
 ## Important Notes
 
 - **Existing Templates:** Check for existing canvas_content.md files in notebooks/ subdirectories before prompting to create new ones
-- **Template Discovery:** Use Bash to list directories in notebooks/ and check for canvas_content.md files: `find notebooks -name "canvas_content.md" -type f`
+- **Template Discovery:** Use Bash to list directories in templates/ and check for canvas_content.md files: `find templates -name "canvas_content.md" -type f`
 - The generate_notebook.py script requires manual canvas export for now (future versions may support API integration)
 - Be patient with the user during the manual canvas export step (only applies to new template creation)
 - When replacing variables in the notebook, be careful to only replace actual placeholder variables, not arbitrary uses of those words in text
@@ -364,8 +364,9 @@ For CSV output (always offer as backup):
 
 ## File Structure
 
-Each template subdirectory contains:
-- **canvas_content.md** - Raw Slack canvas content (template for notebook generation)
+Templates are stored in:
+- **templates/{template-name}/**
+  - **canvas_content.md** - Raw Slack canvas content (template for notebook generation)
 
 Customer-specific files are stored together in:
 - **notebooks/customers/{customer-name-slug}/**
@@ -387,10 +388,10 @@ The generated notebooks should follow this structure:
 1. User invokes: `/notebook-from-canvas` or asks to "Generate a notebook from canvas"
 2. You ask user to select industry: "Education", "Financial Services", or "New Industry"
 3. User selects "Education"
-4. You check notebooks/ directory and find existing templates with canvas_content.md files:
-   - `notebooks/higher-education/canvas_content.md` exists
-   - `notebooks/fraud-operations/canvas_content.md` exists
-5. You present options: "Higher Education", "Fraud Operations", or "Create New from Slack Canvas"
+4. You check templates/ directory and find existing templates with canvas_content.md files:
+   - `templates/higher-education/canvas_content.md` exists
+   - `templates/financial-services/canvas_content.md` exists
+5. You present options: "Higher Education", "Financial Services", or "Create New from Slack Canvas"
 6. User selects "Higher Education"
 7. You run: `python3 scripts/generate_notebook.py --template higher-education`
 8. The script generates: `notebooks/higher-education/higher-education_20260427.ipynb`
@@ -419,11 +420,11 @@ The generated notebooks should follow this structure:
 5. User provides: "F0BXC9KK2WY"
 6. You ask for template name
 7. User provides: "wealth-management"
-8. You create directory: `notebooks/wealth-management/`
-9. You instruct user to export canvas content to `notebooks/wealth-management/canvas_content.md`
+8. You create directory: `templates/wealth-management/`
+9. You instruct user to export canvas content to `templates/wealth-management/canvas_content.md`
 10. User confirms completion
 11. You run: `python3 scripts/generate_notebook.py --template wealth-management`
-12. The script generates: `notebooks/wealth-management/wealth-management_20260427.ipynb`
+12. The script generates temporary notebook: `notebooks/wealth-management/wealth-management_20260427.ipynb`
 13. You identify variables in the notebook and collect values from user
 14. You customize the notebook with user-provided values
 15. You configure output destination and complete the workflow
