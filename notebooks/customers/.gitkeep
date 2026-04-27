@@ -1,0 +1,4 @@
+# Customer-specific notebooks are stored here but not committed to Git
+# Each customer gets their own directory with:
+#   - {customer-name}.ipynb (customized notebook)
+#   - context.md (customer research/background)

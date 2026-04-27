@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \":*)",
+      "Bash(python3:*)",
+      "Bash(source .venv/bin/activate)",
+      "Bash(pip install sqlalchemy psycopg2-binary)",
+      "Read(//tmp/**)",
+      "Read(//private/tmp/**)",
+      "Bash(python scripts/scripts/generate_fins_notebook.py --list-templates)",
+      "Bash(find notebooks *)",
+      "Bash(ls *)",
+      "Bash(dirname *)",
+      "Bash(sed *)",
+      "Bash(grep -n *)",
+      "Bash(python3 scripts/generate_notebook.py --template *)",
+      "Read(notebooks/**/*.ipynb)",
+      "Read(notebooks/**/*.md)",
+      "Bash(xargs -I {} dirname {})",
+      "Bash(xargs basename *)",
+      "Bash(for *)",
+      "Bash([ -f *)",
+      "Bash(basename *)",
+      "Bash(test -f *)",
+      "Bash(code \"notebooks/higher-education/higher-education_20260427.ipynb\")",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git config *)",
+      "Bash(gh auth *)",
+      "Bash(code --version)",
+      "Bash(brew install *)",
+      "Bash(gh repo *)",
+      "Bash(git commit *)"
+    ],
+    "additionalDirectories": [
+      "/Users/harold.thomas/Library/CloudStorage/GoogleDrive-harold.thomas@salesforce.com/My Drive/SE Resources/Demo Data/Python Data Generation Scripts/.claude",
+      "/tmp",
+      "/private/tmp",
+      "/Users/harold.thomas/Library/CloudStorage/GoogleDrive-harold.thomas@salesforce.com/My Drive/SE Resources/Demo Data/Python Data Generation Scripts/notebooks",
+      "/Users/harold.thomas/Library/CloudStorage/GoogleDrive-harold.thomas@salesforce.com/My Drive/SE Resources/Demo Data/Python Data Generation Scripts/.git"
+    ]
+  }
+}

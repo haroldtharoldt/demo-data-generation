@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables (CRITICAL - contains credentials)
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# Salesforce
+.sfdx/
+.sf/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Logs
+*.log
+
+# Output files (generated CSV data)
+output/csv/*.csv
+output/logs/*.log
+*.parquet
+
+# Legacy/Deprecated Scripts
+Generate GT OCE Datasets v1.py
+Generate GT OSP Datasets v3.py
+Hydrate DonorGiftSummary.py
+Shift Dates for GT OCE Datasets.py
+Student Success Advising - Generate Input File Templates.py
+Student Success Advising Data Generator.py
+Student Success Metrics.py
+Test AWS S3 Connection.py
+UMGC VoS - Generate Datasets v1.py
+UMGC VoS - Generate Datasets v2.py
+
+# Claude Code
+.claude/transcripts/
+.claude/*.jsonl
+
+# Customer-specific notebooks and context (may contain sensitive data)
+notebooks/customers/*/context.md
+notebooks/customers/*/*.ipynb

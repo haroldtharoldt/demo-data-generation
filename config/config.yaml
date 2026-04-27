@@ -1,0 +1,36 @@
+#Salesforce Orgs#
+salesforce:
+  default_org: TableauNextEdu
+  orgs:
+    AnalyticsEduIdo:
+      alias: AnalyticsEduIdo
+      instance_url: https://analyticseduido.demo.lightning.force.com
+    TableauNextEdu:
+      alias: TableauNextEdu
+      instance_url: https://tableau-next-education-cloud.lightning.force.com
+    MiddleGeorgiaAviation:
+      alias: MiddleGeorgiaAviation
+      instance_url: https://storm-c13a33a3e41b6f.lightning.force.com
+
+#Dataverse - PostgreSQL Database Configuration#
+database:
+  postgres:
+    host: postgresql.demo.tableau.com
+    port: 5432
+    database: d2pbagf1jq37ti
+    require_ssl: true
+    # Credentials loaded from environment variables:
+    # DB_USERNAME and DB_PASSWORD
+
+#Output Settings#
+output:
+  csv_path: ./output/csv
+  log_path: ./output/logs
+  date_format: "%Y-%m-%d"
+  
+#Data Generation Defaults#
+data_generation:
+  default_record_count: 20000
+  date_range_days: 730
+  use_faker_seed: true
+  faker_seed: 42

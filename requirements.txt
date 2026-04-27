@@ -1,0 +1,58 @@
+#Core Data Processing#
+numpy==2.3.1
+pandas==2.2.3
+python-dateutil==2.9.0.post0
+pytz==2025.2
+tzdata==2025.3
+
+#Salesforce Integration#
+simple-salesforce==1.12.9
+requests==2.32.5
+requests-file==3.0.1
+requests-toolbelt==1.0.0
+
+#AWS Integration#
+boto3==1.40.28
+botocore==1.40.28
+s3transfer==0.14.0
+
+#Authentication & Security#
+PyJWT==2.11.0
+cryptography==46.0.5
+certifi==2026.2.25
+cffi==2.0.0
+
+#XML/SOAP (for Salesforce metadata)#
+zeep==4.3.2
+lxml==6.0.2
+
+#Utilities#
+attrs==25.4.0
+charset-normalizer==3.4.4
+idna==3.11
+isodate==0.7.2
+jmespath==1.0.1
+more-itertools==10.8.0
+platformdirs==4.9.2
+pycparser==3.0
+six==1.17.0
+typing_extensions==4.15.0
+urllib3==2.6.3
+
+#Visualization & Analysis#
+matplotlib==3.9.3
+seaborn==0.13.2
+plotly==5.24.1
+
+#Jupyter Notebook Support#
+jupyter==1.1.1
+ipykernel==6.29.5
+ipywidgets==8.1.5
+
+#Synthetic Data Generation#
+faker==33.1.0
+
+#Interactive Apps#
+streamlit==1.40.1
+python-dotenv
+pyyaml

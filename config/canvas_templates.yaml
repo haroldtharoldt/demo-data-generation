@@ -1,0 +1,52 @@
+#Slack Canvas Template Registry#
+#Add your template canvases here with their IDs and metadata#
+
+templates:
+  higher-education:
+    canvas_id: "F0AHX0JJ0SX"  # Update with actual ID when created
+    name: "Higher Education Template"
+    description: "Multi-business unit template: Recruitment & Admissions, Student Success, Advancement"
+    business_unit: "Higher Education (All)"
+    
+  student-success:
+    canvas_id: "TBD"  # Create canvas and add ID
+    name: "Student Success Template"
+    description: "Retention rates, GPA tracking, engagement metrics, intervention tracking"
+    business_unit: "Student Success"
+    
+  advancement:
+    canvas_id: "TBD"  # Create canvas and add ID
+    name: "Advancement Template"
+    description: "Donor pipelines, campaign tracking, major gift progression"
+    business_unit: "Advancement"
+    
+  registrar:
+    canvas_id: "TBD"  # Create canvas and add ID
+    name: "Registrar & Enrollment Management Template"
+    description: "Course enrollment, credit hours, FTE calculations, program tracking"
+    business_unit: "Registrar & Enrollment Management"
+    
+  corporate-engagement:
+    canvas_id: "TBD"  # Create canvas and add ID
+    name: "Corporate Engagement Template"
+    description: "Sponsorships, research partnerships, grant tracking"
+    business_unit: "Corporate Engagement"
+    
+  financial-services:
+    canvas_id: "F0ANR1A58Q1"
+    name: "FINS Data Engineering Notebook Template"
+    description: "As a fraud analyst, when a new potential case of fraud is flagged I want to analyze this transaction in the context of similar transactions so that I can verify the fraudulent activity, revert the decision to our customers quickly, and reduce the time spent identifying fraud."
+    business_unit: "Farud Operations"
+    
+  master:
+    canvas_id: "TBD"  # Create canvas and add ID
+    name: "Master Universal Template"
+    description: "Flexible template supporting all business units with configurable sections"
+    business_unit: "All"
+
+#Template usage tracking (optional)#
+usage_notes: |
+  - higher-education: Multi-BU template supporting Recruitment & Admissions, Student Success, and Advancement use cases
+  - student-success: Best for retention and intervention demos (TBD - specialized template)
+  - advancement: Best for fundraising campaign demos (TBD - specialized template)
+  - master: Use when you need flexibility across multiple business units
